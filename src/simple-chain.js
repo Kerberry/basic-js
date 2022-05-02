@@ -16,7 +16,7 @@ const { NotImplementedError } = require('../extensions/index.js');
     return(this);
   },
   removeLink(position) {
-    if (typeof(position) == 'number' && position % 1 == 0 ){
+    if (/*typeof(position) != 'object' && */position % 1 == 0 ){
     //throw new NotImplementedError('Not implemented');
       if(position <= this.res.length){
         this.res.splice(position-1, 1);
@@ -37,8 +37,9 @@ const { NotImplementedError } = require('../extensions/index.js');
 
   },
   finishChain() {
-	  this.res = this.res.join('~~');
-    return this.res;
+	  let n = this.res.join('~~');
+    this.res = [];
+    return n;
   }
 };
 

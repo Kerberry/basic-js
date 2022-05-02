@@ -18,7 +18,19 @@ const HALF_LIFE_PERIOD = 5730;
  *
  */
 function dateSample( sampleActivity ) {
-  throw new NotImplementedError('Not implemented');
+  if (typeof(sampleActivity) == 'string'){
+    if(sampleActivity >= 1 && sampleActivity <15){
+      let age = Math.ceil(Math.log(15/sampleActivity) / (0.693 / 5730));
+      return age;
+  
+    }
+    else{
+      return false
+    }
+  }
+  else{
+    return false;
+  }
   
 }
 
