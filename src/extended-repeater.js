@@ -19,10 +19,10 @@ function repeater(str, options) {
   let result = '';
   if(options.repeatTimes){
     for(let i = 0; i < options.repeatTimes; i++){
-      result += str.toString();
+      result += str;
       for(let j=0; j < options.additionRepeatTimes; j++ ){
-        if(options.addition){
-          result += options.addition.toString();
+        if(options.addition !== undefined){
+          result += options.addition;
         }
         if(j < options.additionRepeatTimes -1){
           if(options.additionSeparator){
@@ -42,11 +42,11 @@ function repeater(str, options) {
     }
   }
   else{
-    result += str.toString();
+    result += str;
     if(options.additionRepeatTimes){
       for(let j=0; j < options.additionRepeatTimes; j++ ){
-        if(options.addition){
-          result += options.addition.toString();
+        if(options.addition !== undefined){
+          result += options.addition;
         }
         if(options.additionSeparator){
           result += options.additionSeparator;
